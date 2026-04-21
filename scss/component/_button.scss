@@ -1,19 +1,125 @@
 @use "../abstracts/index" as *;
 
-// .tf-btn {
-//     @include btnFillScale(var(--white-2), var(--text-color-1));
+// .btn-slider {
+//     position: relative;
+//     z-index: 2;
+//     overflow: hidden;
+//     transition: all 0.5s ease-in-out;
 
-//     color: var(--text-color-1);
-//     background-color: var(--text-color-3);
-//     border: 1px solid var(--text-color-3);
+//     max-width: 398px;
+//     text-wrap: nowrap;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     height: 66px;
+//     padding: 15px 10px 15px 35px;
 
+//     border-radius: 40px;
+//     background-color: var(--primary-5);
+//     color: var(--text-body);
+//     font-size: 30px;
+//     line-height: 24px;
+//     font-weight: 600;
+
+//     i {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         padding: 10px;
+//         border-radius: 50%;
+//         border: 1px solid var(--text-body);
+//     }
 
 //     &:hover {
-//         border-color: var(--text-color-3);
-//         color: var(--text-color-1);
+//         color: var(--color-1);
+//         transition: 0.3s ease;
+
+//         i {
+//             border-color: var(--color-1);
+//             color: var(--color-1);
+//             transition: 0.3s ease;
+//         }
 //     }
 
 // }
+.btn-slider {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    // width: 55%;
+    max-width: 200px;
+
+    height: 48px;
+    padding: 10px 15px;
+
+    border-radius: 200px;
+    background-color: var(--primary-5);
+    color: var(--text-body);
+
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid var(--text-body);
+        font-size: 12px;
+    }
+
+    &:hover {
+        color: var(--color-1);
+        transition: 0.3s ease;
+
+        i {
+            border-color: var(--color-1);
+            color: var(--color-1);
+            transition: 0.3s ease;
+        }
+    }
+}
+
+.btn-hover-animate-2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -15%;
+    right: 0;
+    width: 0;
+    height: 106%;
+    background: var(--primary-4);
+    transform: skew(45deg);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+
+.btn-slider.btn-hover-animate-2:hover::after {
+    width: 120%;
+}
+
+.btn-slider.btn-hover-animate-2 span,
+.btn-slider.btn-hover-animate-2 i {
+    position: relative;
+    z-index: 3;
+}
 
 .tf-btn {
     @include btnFillScale(var(--white-2), var(--text-color-1));
@@ -321,6 +427,35 @@
             object-fit: cover;
             max-width: 157px;
             max-height: 55px;
+        }
+    }
+}
+
+
+@media (min-width: 769px) {
+    .btn-slider {
+        max-width: 260px !important;
+        height: 56px;
+        padding: 12px 20px;
+        font-size: 20px;
+
+        i {
+            padding: 8px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media (min-width: 1201px) {
+    .btn-slider {
+        max-width: 398px !important;
+        height: 66px;
+        padding: 15px 10px 15px 35px;
+        font-size: 30px;
+
+        i {
+            padding: 10px;
+            font-size: 16px;
         }
     }
 }

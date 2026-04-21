@@ -1,2 +1,38 @@
 @use "./abstracts/index" as *;
 
+@media (max-width: 1199px) {
+    h1 {
+        font-size: 94px;
+        line-height: 72px;
+    }
+}
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 64px;
+        line-height: 72px;
+    }
+}
+
+@media (max-width: 757px) {
+    h1 {
+        font-size: 55px !important;
+        line-height: 50px !important;
+    }
+
+    .text-xl {
+        font-size: 32px !important;
+        line-height: 40px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .text-lg-3 {
+        font-size: 18px;
+    }
+
+    .text-xl {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+}

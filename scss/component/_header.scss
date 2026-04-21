@@ -2,20 +2,21 @@
 
 
 .header {
-    // position: fixed;
-    // top: 0; // chỉ giữ cái này
-    // left: 0;
-    // width: 100%;
-    // z-index: 1030;
-    // transition: all 0.45s ease;
-    // background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    transition: all 0.45s ease;
+    background: transparent;
+    overflow: hidden;
 
-    // &.is-sticky {
-    //     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); // fix
-    //     backdrop-filter: blur(14px);
-    //     background: rgba(0, 0, 0, 0.4); // hoặc rgba(255,255,255,0.8) tuỳ design
-    //     animation: slideDown 0.4s ease;
-    // }
+    &.is-sticky {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(14px);
+        background: rgba(0, 0, 0, 0.4);
+        animation: slideDown 0.4s ease;
+    }
 
     &__inner {
         display: flex;
@@ -24,7 +25,7 @@
     }
 
     &__nav {
-        padding: 42px 250px 42px 100px;
+        padding: 30px 100px 30px 50px;
         background-color: var(--primary-1);
         border-radius: 0px 0px 0px 100px;
     }
@@ -40,12 +41,12 @@
     }
 
     &__left {
-        padding: 10px 10px 10px 50px;
-        margin-left: 200px;
+        padding: 10px 10px 10px 10px;
+        max-width: 200px;
     }
 
     &__right {
-        margin-right: 15px;
+        padding-right: 10px;
     }
 }
 
@@ -89,24 +90,66 @@
     }
 }
 
+.header__menu-item {
+    a {
+        color: var(--text-body);
 
+        &:hover {
+            transition: 0.3s ease;
+            color: var(--color-1);
+        }
+    }
 
-@media (max-width: 1699px) {
+}
+
+@media (min-width: 1201px) {
     .header__left {
-        padding: 10px 10px 10px 75px;
-        margin-left: 0px;
-        max-width: 350px;
+        padding-left: 70px;
+        max-width: 300px;
     }
 
     .header__nav {
-        padding: 30px 75px 30px 50px;
+        padding: 42px 70px 42px 100px;
 
     }
+
 }
 
-@media (max-width: 1199px) {
+@media (min-width: 1501px) {
     .header__left {
-        padding: 10px 10px 10px 15px;
-        max-width: 200px;
+        padding-left: 50px;
+        margin-left: 100px;
+        max-width: unset;
     }
+
+    .header__nav {
+        padding: 42px 100px 42px 100px;
+
+    }
+
+}
+
+@media (min-width: 1601px) {
+    .header__left {
+        padding-left: 50px;
+        max-width: unset;
+    }
+
+    .header__nav {
+        padding: 42px 250px 42px 100px;
+    }
+
+}
+
+@media (min-width: 1701px) {
+    .header__left {
+        padding-left: 50px;
+        margin-left: 220px;
+        max-width: unset;
+    }
+
+    .header__nav {
+        padding: 42px 285px 42px 100px;
+    }
+
 }

@@ -1,139 +1,254 @@
 @use "../abstracts/index" as *;
+.about__right{
+    display: flex;
+    gap: 30px;
 
-
-.membership-slider {
-    padding: 0px 20px;
+}
+.about__box-left{
+    background-color: var(--primary-6);
+    height: 600px;
+    
 }
 
-.membership {
-    &__card {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+
+
+// SCSS
+
+
+// .slider-about {
+//     width: 100%;
+//     overflow: hidden;
+// }
+
+// .slider-about__slide {
+//     width: 100%;
+// }
+
+
+.slider-about__item {
+    position: relative;
+    width: 100%;
+    height: 365px;
+    overflow: hidden;
+
+
+}
+
+.slider-about__image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+        width: 100%;
         height: 100%;
+        // object-fit: cover;
+        display: block;
+    }
+}
+
+.slider-about__content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-10%);
+    z-index: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    // @media (max-width: 768px) {
+    //     padding: 0 24px;
+    //     flex-direction: column;
+    //     gap: 16px;
+    // }
+}
+
+
+.slider-about__content-right {
+
+    .img-right {
+        display: flex;
+        justify-content: flex-end;
     }
 
-    &__card-content {
-        flex: 1;
-
-        p {
-            span {
-                font-weight: bold;
-            }
-        }
-    }
-
-    &__image {
+    img {
+        width: 60px;
+        height: auto;
         flex-shrink: 0;
-        border-radius: 10px;
+        object-fit: cover;
+    }
+}
+
+.slider-about__content-left {
+    margin-top: -45px;
+
+    .img-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    img {
+
+        width: 60px;
+        height: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+}
+
+
+.slider-about__title {
+    color: var(--text-body);
+}
+
+// Pagination
+// .slider-about__pagination-wrapper {
+//     padding: 20px 0;
+// }
+
+// .slider-about__pagination {
+//     gap: 12px;
+// }
+
+// .slider-about__btn {
+//     background: none;
+//     border: none;
+//     cursor: pointer;
+//     font-size: 20px;
+//     color: #333;
+//     padding: 4px 8px;
+//     transition: opacity 0.2s;
+
+//     &:hover {
+//         opacity: 0.6;
+//     }
+// }
+
+// .slider-about__dots {
+//     // Swiper sẽ inject pagination bullets vào đây
+// }
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .slider-about__item {
+        height: 600px !important;
+    }
+
+    .slider-about__content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(15%) !important;
+        z-index: 1;
+        padding-left: 15px !important;
+        padding-right: 30px !important;
+    }
+
+    .slider-about__content-left {
+        margin-right: 10px !important;
 
         img {
-            width: 100%;
-            height: 100%;
+            width: 90px !important;
+            height: auto;
+            flex-shrink: 0;
             object-fit: cover;
         }
     }
+
+    .slider-about__content-right {
+        img {
+            width: 90px !important;
+            height: auto;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+    }
+
 }
 
-// .membership-slider {
-//     overflow: visible;
-//     padding-right: 40px;
+@media (min-width: 992px) {
+    .slider-about__item {
+        height: 680px !important;
+    }
+
+    .slider-about__content {
+        transform: translateY(-15%) !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .slider-about__content-left {
+        margin-top: -60px !important;
+        margin-right: 15px !important;
+
+        img {
+            width: 110px !important;
+        }
+    }
+
+    .slider-about__content-right {
+        margin-right: 10px !important;
+
+        img {
+            width: 110px !important;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider-about__item {
+        height: 735px !important;
+    }
+
+    .slider-about__content {
+        transform: translateY(0%) !important;
+        padding-left: 20px !important;
+        padding-right: 25px !important;
+    }
+
+    .slider-about__content-left {
+        margin-top: -100px !important;
+        margin-right: 20px !important;
+
+        img {
+            width: 160px !important;
+        }
+    }
+
+    .slider-about__content-right {
+        margin-right: 10px !important;
+
+        img {
+            width: 160px !important;
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+
+
+    .slider-about__content {
+        transform: translateY(0%) !important;
+        padding-left: 20px !important;
+        padding-right: 35px !important;
+    }
+
+
+}
+
+
+
+
+// @media (max-width: 768px) {
+//     height: 360px;
 // }
-
-
-// .sw-dot-default {
-//     display: flex;
-//     gap: 0px !important;
-
-//     .swiper-pagination-bullet {
-//         width: 26px;
-//         height: 26px;
-//         @include flex(center, center);
-//         @include transition3;
-//         background-color: transparent;
-//         border: 1px solid transparent;
-//         position: relative;
-//         opacity: 1;
-
-//         &:before {
-//             content: "";
-//             display: inline-block;
-//             width: 6px;
-//             height: 6px;
-//             border-radius: 999px;
-//             background-color: var(--black);
-//             @include transition3;
-//         }
-//     }
-
-//     .swiper-pagination-bullet-active {
-//         border-color: var(--black);
-
-//         &::before {
-//             background-color: var(--black);
-//         }
-//     }
-
-
-
-// }
-
-
-/* ========== portfolio ========== */
-
-// .sw-dot-default {
-//     display: flex;
-//     gap: 0px !important;
-
-
-//     .swiper-pagination-bullet {
-//         width: 26px;
-//         height: 26px;
-//         @include flex(center, center);
-//         @include transition3;
-//         background-color: transparent;
-//         border: 1px solid transparent;
-//         position: relative;
-//         opacity: 1;
-
-//         &:before {
-//             content: "";
-//             display: inline-block;
-//             width: 6px;
-//             height: 6px;
-//             border-radius: 999px;
-//             background-color: var(--black);
-//             @include transition3;
-//         }
-//     }
-
-//     .swiper-pagination-bullet-active {
-//         border-color: var(--black);
-
-//         &::before {
-//             background-color: var(--black);
-//         }
-//     }
-
-//     &.style-1 {
-//         .swiper-pagination-bullet {
-//             &:before {
-//                 background-color: var(--main-color);
-//             }
-//         }
-
-//         .swiper-pagination-bullet-active {
-
-//             border-color: var(--main-color);
-
-//             &::before {
-//                 background-color: var(--main-color);
-//             }
-//         }
-//     }
-// }
-
-
 /* ========== home ========== */
 
 
@@ -194,7 +309,7 @@
         display: grid;
         gap: 10px;
 
-        h2 {
+        h1 {
             color: var(--text-color-3);
         }
 
@@ -225,16 +340,15 @@
     }
 }
 
-// >= 558px thì hiện
-@media (min-width: 578px) {
+
+@media (min-width: 576px) {
     .box-tilte-slider {
         .desc {
             display: block;
         }
     }
-
-
 }
+
 
 
 // ============================================================

@@ -1,3 +1,4 @@
+// jQuery + Swiper init
 // ================= PORTFOLIO SWIPER =================
 if ($(".swiper-portfolio").length) {
   new Swiper(".swiper-portfolio", {
@@ -282,3 +283,74 @@ const membershipSwiper = new Swiper('.membership-slider', {
 });
 
 
+
+
+const sliderAbout = new Swiper('.slider-about', {
+  loop: true,
+  speed: 600,
+
+  // autoplay: {
+  //   delay: 4000,
+  //   disableOnInteraction: false,
+  // },
+
+  pagination: {
+    el: '.slider-about__dots',
+    clickable: true,
+  },
+
+  navigation: {
+    prevEl: '.slider-about__btn--prev',
+    nextEl: '.slider-about__btn--next',
+  },
+});
+
+
+
+// $(document).ready(function () {
+
+//   const sliderAbout = new Swiper('.slider-about.tf-swiper', {
+//     loop: true,
+//     speed: 600,
+//     autoplay: {
+//       delay: 4000,
+//       disableOnInteraction: false,
+//     },
+
+//     // Pagination (dots)
+//     pagination: {
+//       el: '.slider-about__dots',
+//       clickable: true,
+//     },
+
+//     // Navigation buttons
+//     navigation: {
+//       prevEl: '.slider-about__btn--prev',
+//       nextEl: '.slider-about__btn--next',
+//     },
+
+//     // Hiệu ứng fade (tuỳ chọn, xoá nếu muốn slide thường)
+//     effect: 'fade',
+//     fadeEffect: {
+//       crossFade: true,
+//     },
+
+//     on: {
+//       // Có thể dùng jQuery events ở đây nếu cần
+//       slideChangeTransitionEnd: function () {
+//         const activeIndex = this.realIndex;
+//         console.log('Slide hiện tại:', activeIndex);
+//         // Thêm logic jQuery tuỳ ý ở đây
+//       }
+//     }
+//   });
+
+//   // Nếu muốn dùng jQuery thuần cho nút (không dùng Swiper navigation)
+//   // $('.slider-about__btn--prev').on('click', function () {
+//   //   sliderAbout.slidePrev();
+//   // });
+//   // $('.slider-about__btn--next').on('click', function () {
+//   //   sliderAbout.slideNext();
+//   // });
+
+// });

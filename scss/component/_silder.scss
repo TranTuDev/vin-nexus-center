@@ -1,13 +1,15 @@
 @use "../abstracts/index" as *;
-.about__right{
+
+.about__right {
     display: flex;
     gap: 30px;
 
 }
-.about__box-left{
+
+.about__box-left {
     background-color: var(--primary-6);
     height: 600px;
-    
+    border-radius: 10px 0px 0px 250px;
 }
 
 
